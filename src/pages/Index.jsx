@@ -40,7 +40,7 @@ const Index = () => {
       <header className="h-screen flex items-center justify-center bg-cover bg-center relative" style={{backgroundImage: "url('/portfolio/header.jpg')"}}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="text-center relative z-10">
-          <h1 className="text-8xl font-bold text-white mb-4 font-serif">Jane Doe</h1>
+          <h1 className="text-8xl font-bold text-white mb-4 font-serif">Sachin Joshi</h1>
           <p className="text-4xl text-gray-200 font-light">Professional Model</p>
         </div>
       </header>
@@ -51,7 +51,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-6xl font-semibold text-white mb-8 text-center font-serif">About Me</h2>
           <p className="text-3xl text-white max-w-3xl mx-auto leading-relaxed">
-            I'm Jane Doe, a passionate and versatile model with over 5 years of experience in fashion, commercial, and editorial work. My goal is to bring your vision to life through captivating imagery. With a keen eye for detail and a natural ability to connect with the camera, I strive to create unforgettable moments in every shoot.
+            I'm Sachin Joshi, a passionate and versatile model with over 5 years of experience in fashion, commercial, and editorial work. My goal is to bring your vision to life through captivating imagery. With a keen eye for detail and a natural ability to connect with the camera, I strive to create unforgettable moments in every shoot.
           </p>
         </div>
       </section>
@@ -84,7 +84,7 @@ const Index = () => {
               <Linkedin className="mr-3 h-10 w-10" />
               LinkedIn
             </a>
-            <a href="mailto:jane@example.com" className="flex items-center text-2xl hover:text-gray-300 transition-colors duration-300">
+            <a href="mailto:sachin@example.com" className="flex items-center text-2xl hover:text-gray-300 transition-colors duration-300">
               <Mail className="mr-3 h-10 w-10" />
               Email
             </a>
@@ -95,7 +95,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-6">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-2xl">&copy; 2023 Jane Doe. All rights reserved.</p>
+          <p className="text-2xl">&copy; 2023 Sachin Joshi. All rights reserved.</p>
         </div>
       </footer>
 
