@@ -1,5 +1,6 @@
-import React from 'react';
-import { Instagram, Linkedin, Mail } from 'lucide-react';
+import React, { useState } from 'react';
+import { Instagram, Linkedin, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Index = () => {
   const photos = [
@@ -10,6 +11,28 @@ const Index = () => {
     '/placeholder.svg',
     '/placeholder.svg',
   ];
+
+  const [openImage, setOpenImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openImageModal = (index) => {
+    setOpenImage(photos[index]);
+    setCurrentImageIndex(index);
+  };
+
+  const closeImageModal = () => {
+    setOpenImage(null);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % photos.length);
+    setOpenImage(photos[(currentImageIndex + 1) % photos.length]);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
+    setOpenImage(photos[(currentImageIndex - 1 + photos.length) % photos.length]);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 font-sans">
@@ -38,7 +61,7 @@ const Index = () => {
         <h2 className="text-6xl font-semibold text-gray-800 mb-12 text-center font-serif">Portfolio</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {photos.map((photo, index) => (
-            <div key={index} className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            <div key={index} className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer" onClick={() => openImageModal(index)}>
               <img src={photo} alt={`Model photo ${index + 1}`} className="w-full h-80 object-cover" />
             </div>
           ))}
@@ -75,6 +98,27 @@ const Index = () => {
           <p className="text-2xl">&copy; 2023 Jane Doe. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Image Modal */}
+      <Dialog open={openImage !== null} onOpenChange={closeImageModal}>
+        <DialogContent className="max-w-4xl w-full bg-black p-0 overflow-hidden">
+          <div className="relative">
+            <img src={openImage} alt="Enlarged portfolio image" className="w-full h-auto" />
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+            >
+              <ChevronRight className="h-8 w-8" />
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
