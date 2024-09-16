@@ -4,12 +4,12 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Index = () => {
   const photos = [
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
+    '/portfolio/image1.jpg',
+    '/portfolio/image2.jpg',
+    '/portfolio/image3.jpg',
+    '/portfolio/image4.jpg',
+    '/portfolio/image5.jpg',
+    '/portfolio/image6.jpg',
   ];
 
   const [openImage, setOpenImage] = useState(null);
@@ -37,7 +37,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 font-sans">
       {/* Header with background image */}
-      <header className="h-screen flex items-center justify-center bg-cover bg-center relative" style={{backgroundImage: "url('/placeholder.svg')"}}>
+      <header className="h-screen flex items-center justify-center bg-cover bg-center relative" style={{backgroundImage: "url('/portfolio/header.jpg')"}}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="text-center relative z-10">
           <h1 className="text-8xl font-bold text-white mb-4 font-serif">Jane Doe</h1>
@@ -46,7 +46,7 @@ const Index = () => {
       </header>
 
       {/* About Section with Parallax */}
-      <section className="relative py-32 bg-fixed bg-center bg-cover" style={{backgroundImage: "url('/placeholder.svg')"}}>
+      <section className="relative py-32 bg-fixed bg-center bg-cover" style={{backgroundImage: "url('/portfolio/about-bg.jpg')"}}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-6xl font-semibold text-white mb-8 text-center font-serif">About Me</h2>
